@@ -40,6 +40,8 @@ jobs:
               if os.path.exists(f):
                   t = open(f).read()
                   t = re.sub(r'minSdk(Version)?\s*=?\s*flutter\.minSdkVersion', 'minSdk = 24', t)
+                  t = re.sub(r'compileSdk(Version)?\s*=?\s*flutter\.compileSdkVersion', 'compileSdk = 36', t)
+                  t = re.sub(r'compileSdk(Version)?\s*=?\s*\d+', 'compileSdk = 36', t)
                   open(f, 'w').write(t)
           PY
 
